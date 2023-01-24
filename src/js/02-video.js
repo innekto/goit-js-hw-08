@@ -12,8 +12,10 @@ function onPlay(time) {
     localStorage.setItem(currentTime, time.seconds);
 }
 
+function foo() {
+    localStorage.removeItem(currentTime);
+}
 player.on('timeupdate', throttle(onPlay, 1000));
 
 player.setCurrentTime(localStorage.getItem(currentTime) || 0);
-
 
